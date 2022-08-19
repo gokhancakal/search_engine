@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "elasticsearch.username",
+      "type": "java.lang.String",
+      "description": "Description for elasticsearch.username."
+  }
+] }

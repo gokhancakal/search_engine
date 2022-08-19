@@ -10,7 +10,6 @@ import java.util.List;
 @RequestMapping("/search")
 @RequiredArgsConstructor
 public class ContentController {
-
     private final SearchService searchService;
 
     @GetMapping

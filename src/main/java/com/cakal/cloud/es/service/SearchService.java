@@ -3,6 +3,7 @@ package com.cakal.cloud.es.service;
 import com.cakal.cloud.es.model.Content;
 import com.cakal.cloud.es.repository.ContentRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,9 +12,9 @@ import java.util.List;
 @AllArgsConstructor
 @Service
 public class SearchService {
-
     private ContentRepository contentRepository;
 
+    @Autowired
     public List<Content> searchAll() {
         Iterable<Content> content = contentRepository.findAll();
         List<Content> contents = new ArrayList<>();

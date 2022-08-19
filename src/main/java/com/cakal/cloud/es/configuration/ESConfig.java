@@ -18,6 +18,7 @@ import org.springframework.data.elasticsearch.config.AbstractElasticsearchConfig
 import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
 import org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate;
 
+import javax.annotation.Nonnull;
 import javax.net.ssl.SSLContext;
 
 @Configuration
@@ -36,6 +37,8 @@ public class ESConfig extends AbstractElasticsearchConfiguration {
 
     @SneakyThrows
     @Bean
+    @Deprecated
+    @Nonnull
     public RestHighLevelClient elasticsearchClient() throws RuntimeException  {
         try {
             SSLContextBuilder sslBuilder = SSLContexts.custom()

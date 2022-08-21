@@ -31,6 +31,9 @@ public class Content {
     @Field(type = FieldType.Text, name = "meta_description")
     private String meta_description;
 
+    @Field(type = FieldType.Text, name = "body_content")
+    private String body_content;
+
     @Field(type = FieldType.Text, name = "last_crawled_at")
     private String last_crawled_at;
 

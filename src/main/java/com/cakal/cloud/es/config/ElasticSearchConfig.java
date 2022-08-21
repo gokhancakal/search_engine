@@ -1,5 +1,7 @@
-package com.cakal.cloud.es.configuration;
+package com.cakal.cloud.es.config;
 
+import javax.annotation.Nonnull;
+import javax.net.ssl.SSLContext;
 import lombok.SneakyThrows;
 import org.apache.http.auth.AuthScope;
 import org.apache.http.auth.UsernamePasswordCredentials;
@@ -18,11 +20,9 @@ import org.springframework.data.elasticsearch.config.AbstractElasticsearchConfig
 import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
 import org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate;
 
-import javax.annotation.Nonnull;
-import javax.net.ssl.SSLContext;
 
 @Configuration
-public class ESConfig extends AbstractElasticsearchConfiguration {
+public class ElasticSearchConfig extends AbstractElasticsearchConfiguration {
 
     private static final int ONE_MINUTE = 60 * 1000;
     private static final int ONE_SECOND = 1000;
@@ -36,9 +36,9 @@ public class ESConfig extends AbstractElasticsearchConfiguration {
     private String password;
 
     @SneakyThrows
-    @Bean
     @Deprecated
     @Nonnull
+    @Bean
     public RestHighLevelClient elasticsearchClient() throws RuntimeException  {
         try {
             SSLContextBuilder sslBuilder = SSLContexts.custom()
